@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js 練習</h1>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <div id='app-2'>
+      <span v-bind:title="title">
+        hello second world.
+      <span>
+    </div>
+
+    <div id='app-3'>
+      <span v-if='seen'>light on</span>
+    </div>
+
+    <div id='app-4'>
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div id='app-5'>
+      <p>{{ message }}</p>
+      <button v-on:click='reverseMessage'>Reverse Message</button>
+    </div>
+
+    <div id='app-6'>
+      <p>{{ message }}</p>
+      <input v-model='message'>
+    </div>
+
+    <div id='app-7'>
+      <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+      </ol>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

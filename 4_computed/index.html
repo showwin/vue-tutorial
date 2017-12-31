@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="example">
+      <p>Original message: "{{ message }}"</p>
+      <p>Computed reversed message (cached): "{{ reversedMessage }}"</p>
+      <p>method reversed message (not cached): "{{ reversedMessageMethod() }}"</p>
+    </div>
+
+    <div id='name'>
+      <p>Full Name: {{ fullName }}</p>
+      <p>First Name: {{ firstName }}</p>
+      <p>Last Name: {{ lastName }}</p>
+      <input v-model='firstName'>
+      <input v-model='lastName'>
+      <input v-model='fullName'>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

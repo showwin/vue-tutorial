@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="switch-class" v-bind:class="{ 'active': isActive, 'text-danger': hasError }">
+      <p>switch class name</p>
+    </div>
+
+    <div id="computed-class" v-bind:class="classObject">
+      <p>Computed Class</p>
+    </div>
+
+    <div id="sample-style" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+      <p>sample text</p>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
