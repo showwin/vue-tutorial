@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id='vue-area'>
+      <input v-model="message">
+      <p>Messages is: {{ message }}</p>
+
+      <input v-model.lazy="message">
+      <p>Messages with lazy option is: {{ message }}</p>
+
+      <textarea v-model="message"></textarea>
+      <p style="white-space: pre-line;">Messages is: {{ message }}</p>
+
+      <input type="checkbox" v-model="checked">
+      <label>{{ checked }}</label>
+      <br>
+
+      <input type="checkbox" value="jack" v-model="checkedNames">
+      <label>Jack</label>
+      <input type="checkbox" value="john" v-model="checkedNames">
+      <label>John</label>
+      <input type="checkbox" value="mike" v-model="checkedNames">
+      <label>Mike</label>
+      <br>
+      <span>Checked names: {{ checkedNames }}</span>
+
+      <hr>
+
+      <input v-model.number="age" type="number">
+      <p>Number Input: {{ age }}</p>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id='vue-area'>
+    </div>
+
+    <div id="example">
+      <my-component></mycomponent>
+    </div>
+
+    <div id="example-2">
+      <shared-counter></shared-counter>
+      <shared-counter></shared-counter>
+      <shared-counter></shared-counter>
+    </div>
+
+    <div id="example-3">
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
+    </div>
+
+    <div id='example-4'>
+      <input v-model="parentMsg">
+      <br>
+      <child v-bind:my-message="parentMsg"></child>
+    </div>
+
+    <div id='example-5'>
+      <p>{{ total }}</p>
+      <button-counter v-on:increment="incrementTotal"></button-counter>
+      <button-counter v-on:increment="incrementTotal"></button-counter>
+    <script src="./index.js"></script>
+  </body>
+</html>

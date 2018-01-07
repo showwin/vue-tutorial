@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <ul id="example-1">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
+
+    <ul id="example-2">
+      <li v-for="(item , index) in items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
+    </ul>
+
+    <ul id='keyValue'>
+      <li v-for="(value, key) in object">
+        {{ key }} - {{ value }}
+      </li>
+    </ul>
+
+    <ul id='example-4'>
+      <template v-for="value in even(numbers)">
+        <li>{{ value }}</li>
+        <hr>
+      </template>
+    </ul>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

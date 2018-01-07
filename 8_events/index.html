@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+
+    <div id='example-1'>
+      <button v-on:click="counter += 1">Add 1</button>
+      <p> the button clicked {{ counter }} times</p>
+    </div>
+
+    <div id='example-2'>
+      <button v-on:click.left="counter -= 1" v-on:click.right="counter += 1">left: Reduce 1 / right: Add 1</button>
+      <p> the button clicked {{ counter }} times</p>
+    </div>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
