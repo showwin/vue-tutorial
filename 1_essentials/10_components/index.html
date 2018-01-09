@@ -32,6 +32,31 @@
       <p>{{ total }}</p>
       <button-counter v-on:increment="incrementTotal"></button-counter>
       <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+
+    <div id='slot-example-1'>
+      <h1>Parent title</h1>
+      <my-component>
+        <p>parent content 1</p>
+        <p>parent content 2</p>
+      </my-component>
+    </div>
+
+    <div id='named-slot-example'>
+      <my-awesome-list v-bind:items='items'>
+        <template
+          slot="item"
+          slot-scope="props">
+          <li>{{ props.text }}</li>
+        </template>
+      </my-awesome-list>
+    </div>
+
+    <div id="dynamic-component">
+      <component v-bind:is="currentView">
+      </component>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>

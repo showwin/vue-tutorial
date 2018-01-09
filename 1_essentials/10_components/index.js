@@ -86,3 +86,56 @@ new Vue({
     }
   }
 })
+
+
+Vue.component('my-component', {
+  template: `<div>
+               <h2>child title</h2>
+               <slot>child content1</slot>
+             </div>`
+})
+
+new Vue({
+  el: '#slot-example-1'
+})
+
+
+Vue.component('my-awesome-list', {
+  props: ['items'],
+  template: `<ul>
+               <slot name="item"
+                 v-for="item in items"
+                 v-bind:text="item.text">
+               </slot>
+             </ul>`,
+})
+
+new Vue({
+  el: '#named-slot-example',
+  data: {
+    items: [
+      { text: 'Hello' },
+      { text: 'Huaa' },
+      { text: 'Japanese Char is not allowed' }
+    ]
+  }
+})
+
+
+dv = new Vue({
+  el: '#dynamic-component',
+  data: {
+    currentView: 'home'
+  },
+  components: {
+    home: {
+      template: '<p>home content</p>'
+    },
+    posts: {
+      template: '<p>posts content</p>',
+    },
+    archive: {
+      template: '<p>archive content</p>'
+    }
+  }
+})
