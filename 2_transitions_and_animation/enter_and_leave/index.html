@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+  </head>
+  <body>
+    <div id='demo'>
+      <button v-on:click="show = !show">
+        Toggle
+      </button>
+      <transition name="fade">
+        <p v-if="show">hello</p>
+      </transition>
+    </div>
+
+    <div id="example-1">
+      <button @click="show = !show">
+        Toogle render
+      </button>
+      <transition name="slide-fade">
+        <p v-if="show">hello</p>
+      </transition>
+    </div>
+
+    <div id="custom-class">
+      <button @click="show = !show">
+        Toogle render
+      </button>
+
+      <transition
+        name="custom-classes-transition"
+        enter-active-class="animated tada"
+        leave-active-class="animated bounceOutRight"
+      >
+        <p v-if="show">Hello~!!!!</p>
+      </transition>
+    </div>
+
+    <div id='js-animation'>
+      <button @click="show = !show">
+        Toogle
+      </button>
+      <transition
+        v-on:before-enter="beforeEnter"
+        v-on:enter="enter"
+        v-on:leave='leave'
+        :css='false'
+      >
+        <p v-if='show'>Hello</p>
+      </transition>
+    </div>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
